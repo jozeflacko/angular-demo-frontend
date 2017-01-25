@@ -1,0 +1,36 @@
+<!-- executed only when person has a value -->
+<div  *ngIf="show" class="row">
+	
+	<div>
+		<h2>Add new person</h2>	
+		<form #personForm="ngForm" class="col-md-7 col-xs-12">		   		   	   	
+		   	 <div class="form-group">
+		   		 <label for="email">Email:</label>
+		   		 <input [(ngModel)]="person.email" type="text" name="email" #email="ngModel" placeholder="email" id="email" class="form-control" required />
+		   		 <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Email is required</div>
+		   	 </div>
+		   	 <div class="form-group">	   		  
+		   		 <label for="name">Name:</label>
+		   		 <input type="text" class="form-control" id="name" required [(ngModel)]="person.name"  name="name"  #name="ngModel" placeholder="name" />
+		   		 <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>
+		   	 </div>
+		   	 <div class="form-group">
+		   		 <label>Age: </label>
+		   		 <input [(ngModel)]="person.age"   name="age"   placeholder="age"   class="form-control"/>
+		   	 </div>    	   	 
+		   	 
+		   	 <button type="button" class="btn btn-success" [disabled]="!personForm.form.valid" (click)="addPerson();" >Add Person</button>
+		   	 <button type="button" class="btn btn-default" (click)="close();">Close</button>
+		   	    	 
+		</form>
+	</div>
+	
+<!-- 	<div [hidden]="!saved"> -->
+<!-- 	  <h2>Person {{ person.name }} saved!</h2>	   -->
+<!-- 	  <br> -->
+<!-- 	  <button class="btn btn-default" (click)="submitted=false">Edit</button> -->
+<!-- 	</div> -->
+	
+</div>
+
+

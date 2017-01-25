@@ -1,0 +1,27 @@
+.wrap {
+    display: table;
+    width: 100%;
+}
+.wrap  .left {
+       display: table-cell;
+       min-height: 500px;
+       width: 110px;
+       border-right:1px solid #DDD;
+}
+.wrap  .left  .btn {
+	width:100%;
+}
+.wrap  .left  ul {
+	list-style-type: none;
+	padding:10px;
+}
+.wrap  .left  ul li {
+	padding-bottom:10px;
+}
+.wrap  .right {
+       width: auto;
+       min-height: 500px;
+       display: table-cell;
+       background-color: white; 
+       padding:0px 25px;     
+}

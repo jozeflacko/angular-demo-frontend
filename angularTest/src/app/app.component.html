@@ -1,0 +1,27 @@
+<div class="container-fluid">
+ 	<div class="navbar-header">
+		<h1>{{title}}</h1>   		
+ 	</div>
+</div>
+<hr>
+
+<div class="container-fluid">
+	<div class="wrap">
+		<div class="left">	
+			 <!-- here is menu -->	
+			<ul class="navigation">		     
+			     <li><a routerLink="/persons" class="btn btn-default">Show persons</a></li>
+			     <li><a routerLink="/searchPersons" class="btn btn-default">Search persons</a></li>
+			     <li><a routerLink="/bookings/all" class="btn btn-default">Show bookings</a></li>
+			     <li><a routerLink="/simpleTest" class="btn btn-default">Simple test</a></li>
+			     <li><a routerLink="/authentification" class="btn btn-default">Authentification</a></li>		  
+			</ul>
+		</div>
+		<div class="right">
+			
+			    <!-- here will go all views -->
+				<router-outlet></router-outlet>
+			
+		</div>	
+	</div>
+</div>

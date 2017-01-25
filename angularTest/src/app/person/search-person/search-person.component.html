@@ -1,0 +1,59 @@
+<div class="row" style="height:1200px;">
+
+
+	<div class="alert alert-dismissible alert-warning">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+	  <h4>Server for searching persons was called: </h4>
+	  <p>{{ numberOfServerCalls }} times</p>
+	</div>
+	<div> 
+		<div class="col-xs-6">
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			       <h3 class="panel-title">Search person using promises</h3>
+			  </div>
+			  <div class="panel-body">
+				   <input #termPromise type="text" (keyup)="searchPersonByName(termPromise.value)" class="form-control" placeholder="Search">   
+				   <br/>
+				   <b>Found results:</b>
+				   <ul class="list-group">
+				     <li *ngFor="let personP of personsP"  class="list-group-item">{{personP.name}}</li>
+				   </ul> 
+			  </div>
+			</div>
+		</div>	 
+		<div class="col-xs-6">	 
+			<div class="panel panel-success">
+			   <div class="panel-heading">
+			       <h3 class="panel-title">Search person using observables</h3>
+			   </div>
+		   	   <div class="panel-body">
+				   <input #termObservable type="text" (keyup)="getPersonsByNamWithObservables(termObservable.value)"  class="form-control" placeholder="Search">
+				   <br/>
+				   <b>Found results:</b>
+				    <ul class="list-group">
+				     <li *ngFor="let personO of personsO" class="list-group-item">{{personO.name}}</li>
+				   </ul>
+			   </div>
+			 </div>
+		</div> 
+	</div>
+	<div>
+		<div class="col-xs-6">
+			<div class="panel panel-warning">
+			   <div class="panel-heading">
+			       <h3 class="panel-title">Advantages with using observables</h3>
+			   </div>
+		   	   <div class="panel-body">		
+				  	<input #termObservable2 type="text" (keyup)="search(termObservable2.value)" class="form-control" placeholder="Search"/> 
+				  	<br/>
+				    <b>Found results:</b>
+				    <ul class="list-group">
+				        <li *ngFor="let personO2 of personsO2 | async" class="list-group-item">{{personO2.name}}</li>
+				    </ul>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+

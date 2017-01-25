@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+	padding:0px;
+	margin:0px;
+}
+div.row {  
+  margin-bottom:20px;
+  padding:15px;
+  background:#fafaff;
+}
+
+table {
+	background:white;
+}
+table > thead > tr > th {
+	background: #AAA;
+	color:black;
+}
+table > tbody > tr.active > td{ 
+	background-color: red !important; 
+	color:white !important;
+}
+
+
+.btn.back-button {
+	margin-bottom:10px;
+}
+/* for making commentars */
+b {
+	color:#aaa;
+}
+i {
+	color:#bbb;
+}
+
+

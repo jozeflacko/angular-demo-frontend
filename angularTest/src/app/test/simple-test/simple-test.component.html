@@ -1,0 +1,12 @@
+<div class="row">
+	 <h2>Hi, {{person.getPersonName()}}. Click to <button class="btn btn-danger" (click)="sayHellofromSuperhero()">{{label}}</button> </h2>
+	<div class="jl-jumbotron" >	 
+	  <div class="clark-kent" [hidden]="show =='superman' ">
+		<img src="app/test/simple-test/clarkKent.jpg"/>
+	   </div>
+	   <div class="superman"  [hidden]="show =='clark-kent' ">
+			<img src="app/test/simple-test/superman.jpg"/>
+	   </div>
+	   <h1 appJlSimple >{{message}}</h1>
+	</div>	
+</div>

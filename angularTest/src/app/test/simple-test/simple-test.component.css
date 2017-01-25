@@ -1,0 +1,20 @@
+img {	
+	height:400px;
+}
+
+h1 {
+	color:red;
+	position:absolute;
+
+	top:20px;
+	width:400px;
+	left:350px;	
+	/* Rotate div */
+    -ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
+}
+
+.jl-jumbotron {
+	position:relative;
+}

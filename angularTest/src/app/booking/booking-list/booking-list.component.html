@@ -1,0 +1,51 @@
+<div *ngIf="bookings"> 
+
+	<app-booking-new [personId]="addNewBookingForPerson" 
+					 (childBookingNew)="childBookingNew($event)">
+	</app-booking-new>
+	
+	<app-booking-detail [booking]="selectedBooking" 
+					    (childBookingDetail)="childBookingDetail($event)">
+	</app-booking-detail>
+
+   
+	<div class="row">
+		<button class="btn btn-default back-button" (click)="goBack()">Back</button>
+		<h2>Bookings
+			<span *ngIf="( personId > -1 )">for person with id: <span style="color:red;">{{ personId }}</span></span>
+		</h2>
+		<table class="table table-bordered table-striped table-hover table-responsive">
+		  <thead>
+			  <tr>
+			  	<th style="display:none">ID</th>
+			  	<th>Person ID</th>
+			  	<th>Project</th>
+			  	<th>Description</th>
+			  	<th>Time from</th>
+			  	<th>Time to</th>
+			  </tr>	
+		  </thead>
+		  
+		  <tbody>
+			  <tr  *ngFor="let booking of bookings"
+					  (click)="onSelect(booking)"
+				      [class.active]="booking === selectedBooking">
+					<td style="display:none">{{booking.id}}</td>
+					<td>{{booking.personId}}</td>
+					<td>{{booking.project}}</td>
+					<td>{{booking.description}}</td>
+					<td>{{booking.timeFrom}}</td>
+					<td>{{booking.timeTo}}</td>
+			  </tr>
+		  </tbody>
+		</table>
+		<div *ngIf="( personId > -1 ) && ( addNewBookingForPerson == -1 )"> <!-- we see person but not adding new booking yet -->
+			<button
+				type="button" 
+				class="btn btn-primary" 
+				(click)="newBooking();">		
+				Add new booking
+			</button>
+		</div>
+	</div>
+</div>

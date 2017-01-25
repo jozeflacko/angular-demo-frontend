@@ -1,0 +1,39 @@
+<!-- executed only when person has a value -->
+<div *ngIf="booking" class="row">
+<!-- bootstrap modal dialog	http://stackoverflow.com/questions/34513558/angular-2-0-and-modal-dialog -->
+	<h2>Edit booking {{booking.id}}</h2>
+	<form class="col-md-7 col-xs-12" #personForm="ngForm">	   	
+	   	 <div class="form-group">
+	   		 <label>Id: </label>
+	   		 <span class="form-control">{{booking.id}}</span>
+	   	 </div>	 
+	   	 <div class="form-group">
+	   		 <label>Person Id: </label>
+	   		 <span class="form-control">{{booking.personId}}</span>
+	   	 </div>
+	   	 <div class="form-group">
+	   		 <label>Project: </label>
+	   		 <span class="form-control">{{booking.project}}</span>
+	   	 </div>
+	   	 
+	   	 <div class="form-group">
+	   		 <label>Description: </label>
+	   		 <span class="form-control">{{booking.description}}</span>
+	   	 </div>
+	   	 
+	   	 <div class="form-group">
+	   		 <label>Time from: </label>
+	   		 <span class="form-control">{{booking.timeFrom}}</span>
+	   	 </div>
+	   	 
+	   	 <div class="form-group">
+	   		 <label>Time to: </label>
+	   		 <span class="form-control">{{booking.timeTo}}</span>
+	   	 </div>
+	   	 
+	   	 <button type="button" class="btn btn-success" (click)="update();">Update</button>
+	   	 <button type="button" class="btn btn-default" (click)="cancel();">Close</button>
+	   	 <button type="button" class="btn btn-danger pull-right"  (click)="delete();">Delete</button>
+	</form>		
+</div>
+

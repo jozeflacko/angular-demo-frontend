@@ -1,0 +1,46 @@
+<app-person-new [show]="btnNewPersonClicked" 
+				(childPersonNew)="childPersonNew($event)">
+</app-person-new>
+
+<app-person-detail [person]="selectedPerson" 
+				   (childPersonDetail)="childPersonDetail($event)">
+</app-person-detail>
+
+<div class="row">
+	<h2>Person table</h2>
+	
+	<table class="table table-bordered table-striped table-hover table-responsive">
+	  <thead>
+		  <tr>
+		  	<th>ID</th>
+		  	<th>Name</th>
+		  	<th>Email</th>
+		  	<th>Age</th>
+		  	<th>Actions</th>
+		  </tr>	
+	  </thead>
+	  <!-- (click call corecponsing mething) -->
+	  
+	  <tbody>
+	      <!-- structural directive -->
+		  <tr *ngFor="let person of persons" 
+		      (click)="onSelect(person)"
+		      [class.active]="person === selectedPerson">
+			<td>{{person.id}}</td>
+			<td>{{person.name}}</td>
+			<td>{{person.email}}</td>
+			<td>{{person.age}}</td>		
+			<td>
+				 <a class="btn-sm btn-success" routerLink="/bookings/{{person.id}}">Bookings</a>
+			</td>
+		  </tr>
+	  </tbody>
+	</table>
+	
+	<button type="button" 
+			class="btn btn-primary" 
+			(click)="newPerson();">		
+		Add new person
+	</button>
+	
+</div>
