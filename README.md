@@ -1,2 +1,2 @@
 # AngularTest
-This project contains only personal notes from taking tutorial.
+This project contains only personal notes.
